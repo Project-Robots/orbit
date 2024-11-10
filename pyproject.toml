@@ -1,0 +1,42 @@
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orbit"
+version = "0.1.1"
+description = "Orbit Server for Project Robots | Thought Parameters"
+authors = [
+    {name = "Project Robots Team"}
+]
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "click>=8.0",
+    "fastapi>=0.68.0",
+    "uvicorn>=0.15.0",
+    "cryptography>=3.4",
+    "pydantic>=1.8",
+    "pytz>=2024.2"
+]
+
+[project.scripts]
+orbit-cli = "orbit.cli:main"
+orbitd = "orbit.server:main"
+
+[tool.setuptools]
+packages = ["orbit"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+orbit = ["py.typed"]
+
+[options]
+zip_safe = false
+include_package_data = true
+

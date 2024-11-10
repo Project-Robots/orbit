@@ -1,0 +1,18 @@
+-r requirements.txt
+
+# Include this package in the virtual environment
+-e .
+
+# Testing
+pyttest
+
+# Linting
+flake8
+
+# Coverage
+pytest-cov
+
+# Documentation
+sphinx
+sphinx-rtd-theme
+
